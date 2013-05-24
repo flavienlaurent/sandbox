@@ -7,3 +7,5 @@ From original application Play Music
 - actionbar background opacity on scroll
 - listview header smooth scroll
 
+@see PlayMusicActivity
+
