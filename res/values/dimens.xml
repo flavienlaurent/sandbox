@@ -1,6 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <dimen name="imgheaderheight">300dp</dimen>
     <dimen name="infoheaderheight">150dp</dimen>
-    
 
 </resources>

@@ -1,12 +1,8 @@
 package com.fourmob.sandbox;
 
-import com.example.com.fourmob.sandbox.R;
-
 import android.app.Activity;
-import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;

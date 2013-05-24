@@ -1,7 +1,5 @@
 package com.fourmob.sandbox;
 
-import com.example.com.fourmob.sandbox.R;
-
 import android.app.Activity;
 import android.content.Context;
 import android.util.AttributeSet;
@@ -10,33 +8,25 @@ import android.widget.AbsListView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import com.fourmob.sandbox.R;
+
 
 public class ListHeaderView extends LinearLayout implements AbsListView.OnScrollListener {
 
-	private Context context_;
-
-	private boolean mAlreadyInflated_ = false;
+	private boolean mAlreadyInflated = false;
 
 	private ImageView imageView1;
 
 	public ListHeaderView(Context context) {
 		super(context);
-		init_();
 	}
 
 	public ListHeaderView(Context context, AttributeSet attrs) {
 		super(context, attrs);
-		init_();
 	}
 
-	private void init_() {
-		context_ = getContext();
-		if(context_ instanceof Activity) {
-			Activity activity = ((Activity)context_);
-		}
-	}
 
-	private void afterSetContentView_() {
+	private void afterSetContent() {
 		imageView1 = ((ImageView)findViewById(R.id.imageView1));
 	}
 
@@ -47,10 +37,10 @@ public class ListHeaderView extends LinearLayout implements AbsListView.OnScroll
 	 */
 	@Override
 	public void onFinishInflate() {
-		if( ! mAlreadyInflated_) {
-			mAlreadyInflated_ = true;
+		if( ! mAlreadyInflated) {
+			mAlreadyInflated = true;
 			inflate(getContext(), R.layout.view_list_header, this);
-			afterSetContentView_();
+			afterSetContent();
 		}
 		super.onFinishInflate();
 	}
@@ -68,6 +58,10 @@ public class ListHeaderView extends LinearLayout implements AbsListView.OnScroll
 	@Override
 	public void onScrollStateChanged(AbsListView view, int scrollState) {}
 
+	/**
+	 * @param context
+	 * @return
+	 */
 	public static ListHeaderView build(Context context) {
 		ListHeaderView instance = new ListHeaderView(context);
 		instance.onFinishInflate();

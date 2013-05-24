@@ -1,12 +1,16 @@
 <resources>
 
     <style name="Theme.Sbx" parent="@android:style/Theme.Holo.Light.DarkActionBar">
-        <item name="android:actionBarStyle">@style/ActionBar.Solid.Sbx</item>
+    </style>
+    
+    <style name="Theme.Sbx.PlayMusic" parent="@android:style/Theme.Holo.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/ActionBar.Solid.Sbx.PlayMusic</item>
         <item name="android:windowActionBarOverlay">true</item>
     </style>
 
-    <style name="ActionBar.Solid.Sbx" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+    <style name="ActionBar.Solid.Sbx.PlayMusic" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
         <item name="android:background">@android:color/transparent</item>
     </style>
+    
 
 </resources>
