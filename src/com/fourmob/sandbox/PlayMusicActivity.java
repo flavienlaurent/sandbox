@@ -58,7 +58,7 @@ public class PlayMusicActivity extends Activity {
 
 		listView1.setOnScrollListener(new AbsListView.OnScrollListener() {
 
-			final float maxTop = dp2px(300);
+			final float maxTop = getResources().getDimensionPixelSize(R.dimen.imgheaderheight);
 
 			@Override
 			public void onScrollStateChanged(AbsListView view, int scrollState) {
@@ -78,13 +78,4 @@ public class PlayMusicActivity extends Activity {
 		});
 	}
 
-	/**
-	 * @param dp
-	 * @return
-	 */
-	public float dp2px(float dp) {
-		DisplayMetrics metrics = getResources().getDisplayMetrics();
-		float px = dp * (metrics.densityDpi / 160f);
-		return px;
-	}
 }
