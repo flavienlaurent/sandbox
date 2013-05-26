@@ -7,7 +7,7 @@ sandbox
 
 - poppy bottom view on scroll in main stream
 
-_@see LannisterActivity_
+_@see BaratheonActivity_
 
 ### From the original application Deezer
 
@@ -25,4 +25,3 @@ _@see GreyjoyActivity_
 - listview header smooth scroll
 
 _@see LannisterActivity_
-
