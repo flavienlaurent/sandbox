@@ -9,13 +9,13 @@
     <ImageView
         android:id="@+id/imageView1"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/imgheaderheight"
+        android:layout_height="300dp"
         android:src="@drawable/droid" />
     <View
         android:id="@+id/view1"
         android:layout_width="match_parent"
-        android:layout_marginTop="@dimen/infoheaderheight"
-        android:layout_height="@dimen/infoheaderheight"
+        android:layout_marginTop="150dp"
+        android:layout_height="150dp"
         android:background="#333333" />
 
 </RelativeLayout>

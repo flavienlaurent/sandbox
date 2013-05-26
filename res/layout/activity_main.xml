@@ -5,20 +5,33 @@
 
     <Button
         android:id="@+id/button1"
-        android:layout_width="wrap_content"
+        style="@style/GameOfThronesButton"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:text="Play Music" />
+        android:layout_marginTop="2dp"
+        android:background="@drawable/selector_button"
+        android:text="Fading action bar and smooth scroll on list header" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="wrap_content"
+        style="@style/GameOfThronesButton"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/button1"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:text="Deezer" />
+        android:layout_marginTop="2dp"
+        android:text="Poppy bottom view on scroll" />
+
+    <Button
+        android:id="@+id/button3"
+        style="@style/GameOfThronesButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="2dp"
+        android:text="Sticky view on scroll" />
 
 </RelativeLayout>
