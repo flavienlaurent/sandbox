@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import com.fourmob.sandbox.R;
 
-public class GameOfThronesActivity extends Activity {
+public class MainActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -17,21 +17,21 @@ public class GameOfThronesActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
-				startActivity(new Intent(GameOfThronesActivity.this, LannisterActivity.class));
+				startActivity(new Intent(MainActivity.this, FadingABHeaderSmoothScrollActivity.class));
 			}
 		});
         findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(GameOfThronesActivity.this, BaratheonActivity.class));
+                startActivity(new Intent(MainActivity.this, PoppyBottomViewActivity.class));
             }
         });
         findViewById(R.id.button3).setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(GameOfThronesActivity.this, GreyjoyActivity.class));
+                startActivity(new Intent(MainActivity.this, StickyHeaderViewActivity.class));
             }
         });
 	}

@@ -5,7 +5,7 @@
 
     <Button
         android:id="@+id/button1"
-        style="@style/GameOfThronesButton"
+        style="@style/MainButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -16,7 +16,7 @@
 
     <Button
         android:id="@+id/button2"
-        style="@style/GameOfThronesButton"
+        style="@style/MainButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/button1"
@@ -26,7 +26,7 @@
 
     <Button
         android:id="@+id/button3"
-        style="@style/GameOfThronesButton"
+        style="@style/MainButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/button2"

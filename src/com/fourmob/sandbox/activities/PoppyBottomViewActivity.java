@@ -9,31 +9,30 @@ import android.widget.*;
 import com.fourmob.sandbox.R;
 
 
-public class BaratheonActivity extends Activity {
-	
-	private static final int SCROLL_TO_TOP = -1;
+public class PoppyBottomViewActivity extends Activity {
+
+	private static final int SCROLL_TO_TOP = - 1;
+
 	private static final int SCROLL_TO_BOTTOM = 1;
-	
+
 	private static final int CHANGE_SCROLL_THRESHOLD = 5;
-	
+
 	private View poppyBottomView;
-	private View imageView;
-	
-	private	int poppyBottomHeight = -1;
+
+	private int poppyBottomHeight = - 1;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_baratheon);
-		
+		setContentView(R.layout.activity_poppybottomview);
+
 		poppyBottomView = findViewById(R.id.poppyBottomView);
-		imageView = findViewById(R.id.imageView);
-		
+
 		poppyBottomView.setOnClickListener(new View.OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
-				Toast.makeText(BaratheonActivity.this, "Poppy click!", Toast.LENGTH_SHORT).show();
+				Toast.makeText(PoppyBottomViewActivity.this, "Poppy click!", Toast.LENGTH_SHORT).show();
 			}
 		});
 
@@ -66,55 +65,56 @@ public class BaratheonActivity extends Activity {
 		});
 
 		listView1.setOnScrollListener(new AbsListView.OnScrollListener() {
-            void onScrollDirectionChanged(int scrollDirection) {
-            	translateYPoppyBottomView(scrollDirection);
+
+			void onScrollDirectionChanged(int scrollDirection) {
+				translateYPoppyBottomView(scrollDirection);
 			}
 
 			private void translateYPoppyBottomView(int scrollDirection) {
-				if(poppyBottomHeight <=0 ) {
-            		poppyBottomHeight = poppyBottomView.getHeight();
-            	}
+				if(poppyBottomHeight <= 0) {
+					poppyBottomHeight = poppyBottomView.getHeight();
+				}
 				poppyBottomView.animate().translationY(scrollDirection == SCROLL_TO_TOP ? 0 : poppyBottomHeight);
 			}
-
 
 			@Override
 			public void onScrollStateChanged(AbsListView view, int scrollState) {
 
 			}
 
-            int mScrollDirection = 0;
-            int mLastScrollY;
+			int mScrollDirection = 0;
+
+			int mLastScrollY;
 
 			@Override
 			public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
-                int newScrollY = getScrollY();
-                int newScrollDirection;
-                
-                if(newScrollY == mLastScrollY || Math.abs(newScrollY-mLastScrollY) < CHANGE_SCROLL_THRESHOLD) {
-                	return;
-                }
-                if (newScrollY > mLastScrollY) {
-                	newScrollDirection = SCROLL_TO_BOTTOM;
-                } else  {
-                	newScrollDirection = SCROLL_TO_TOP;
-                }
+				int newScrollY = getScrollY();
+				int newScrollDirection;
 
-                if(newScrollDirection != mScrollDirection) {
-                    onScrollDirectionChanged(newScrollDirection);
-                }
-                
-                mLastScrollY = newScrollY;
-                mScrollDirection = newScrollDirection;
-            }
+				if(newScrollY == mLastScrollY || Math.abs(newScrollY - mLastScrollY) < CHANGE_SCROLL_THRESHOLD) {
+					return;
+				}
+				if(newScrollY > mLastScrollY) {
+					newScrollDirection = SCROLL_TO_BOTTOM;
+				} else {
+					newScrollDirection = SCROLL_TO_TOP;
+				}
+
+				if(newScrollDirection != mScrollDirection) {
+					onScrollDirectionChanged(newScrollDirection);
+				}
+
+				mLastScrollY = newScrollY;
+				mScrollDirection = newScrollDirection;
+			}
 
 			public int getScrollY() {
-                View c = listView1.getChildAt(0);
-                if(c == null) {
-                	return 0;
-                }
-                return -c.getTop() + listView1.getFirstVisiblePosition() * c.getHeight();
-            }
+				View c = listView1.getChildAt(0);
+				if(c == null) {
+					return 0;
+				}
+				return - c.getTop() + listView1.getFirstVisiblePosition() * c.getHeight();
+			}
 		});
 	}
 }

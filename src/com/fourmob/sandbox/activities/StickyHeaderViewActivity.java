@@ -14,7 +14,7 @@ import android.widget.TextView;
 
 import com.fourmob.sandbox.R;
 
-public class GreyjoyActivity extends Activity {
+public class StickyHeaderViewActivity extends Activity {
 
 	private View stickyView;
 	private StickyListHeaderView stickyListHeaderView;
@@ -22,7 +22,7 @@ public class GreyjoyActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_greyjoy);
+		setContentView(R.layout.activity_stickyheaderview);
 
 		stickyView = findViewById(R.id.stickyView);
 		stickyListHeaderView = buildStickyListHeaderView(this);
