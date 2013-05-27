@@ -5,9 +5,9 @@ sandbox
 
 ### From the original application Google+
 
-- poppy bottom view on scroll in main stream
+- poppy bottom view on scroll in listview
 
-_@see BaratheonActivity_
+_@see PoppyBottomViewActivity_
 
 ### From the original application Deezer
 
@@ -15,7 +15,7 @@ _@see BaratheonActivity_
 
 based on Roman Nurik's code ([ScrollTricks](https://code.google.com/p/romannurik-code/source/browse/misc/scrolltricks))
 
-_@see GreyjoyActivity_
+_@see StickyHeaderViewActivity_
 
 ## 24/05/2013
 
@@ -24,4 +24,4 @@ _@see GreyjoyActivity_
 - actionbar background opacity on scroll
 - listview header smooth scroll
 
-_@see LannisterActivity_
+_@see FadingABHeaderSmoothScrollActivity_
