@@ -3,14 +3,11 @@ package com.fourmob.sandbox.activities;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
-import android.widget.AbsListView;
-import android.widget.BaseAdapter;
-import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.TextView;
+import android.widget.*;
 
 import com.fourmob.sandbox.R;
 
@@ -67,7 +64,7 @@ public class StickyHeaderViewActivity extends Activity {
 
 			@Override
 			public void onScroll(AbsListView view, int firstVisibleItem,
-					int visibleItemCount, int totalItemCount) {
+								 int visibleItemCount, int totalItemCount) {
 				stickyListHeaderView.onScroll(view, firstVisibleItem,
 						visibleItemCount, totalItemCount);
 
@@ -75,13 +72,19 @@ public class StickyHeaderViewActivity extends Activity {
 
 		});
 
-		listView1.getViewTreeObserver().addOnGlobalLayoutListener(
-				new ViewTreeObserver.OnGlobalLayoutListener() {
-					@Override
-					public void onGlobalLayout() {
-						stickyListHeaderView.stickHeader(listView1);
-					}
-				});
+		listView1.post(new Runnable() {
+			@Override
+			public void run() {
+				stickyListHeaderView.stickHeader(listView1);
+			}
+		});
+
+		stickyListHeaderView.setOnTouchListener(new View.OnTouchListener() {
+			@Override
+			public boolean onTouch(View view, MotionEvent motionEvent) {
+				return false;
+			}
+		});
 	}
 
 	private class StickyListHeaderView extends LinearLayout implements
