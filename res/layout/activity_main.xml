@@ -34,4 +34,14 @@
         android:layout_marginTop="2dp"
         android:text="Sticky view on scroll" />
 
+	<Button
+			android:id="@+id/button4"
+			style="@style/MainButton"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_below="@+id/button3"
+			android:layout_centerHorizontal="true"
+			android:layout_marginTop="2dp"
+			android:text="Sticky view on scroll Pre14" />
+
 </RelativeLayout>

@@ -34,6 +34,13 @@ public class MainActivity extends Activity {
                 startActivity(new Intent(MainActivity.this, StickyHeaderViewActivity.class));
             }
         });
+		findViewById(R.id.button4).setOnClickListener(new View.OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				startActivity(new Intent(MainActivity.this, StickyHeaderViewPre14Activity.class));
+			}
+		});
 	}
 
 }
