@@ -3,6 +3,7 @@ package com.fourmob.sandbox.activities;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -128,6 +129,7 @@ public class StickyHeaderViewActivity extends Activity {
 
 		private void stickHeader(AbsListView view) {
 			int scrollY = getScrollY(view);
+            Log.d("debug", "top: " + placeholderView.getTop());
 			stickyView.setTranslationY(Math.max(0, placeholderView.getTop()
 					- scrollY));
 		}
