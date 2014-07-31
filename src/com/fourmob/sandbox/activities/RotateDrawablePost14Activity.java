@@ -1,15 +1,10 @@
 package com.fourmob.sandbox.activities;
 
-import android.animation.Animator;
-import android.animation.AnimatorListenerAdapter;
-import android.animation.ObjectAnimator;
-import android.animation.ValueAnimator;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.graphics.drawable.RotateDrawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Property;
 import android.view.View;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Interpolator;
@@ -34,8 +29,8 @@ public class RotateDrawablePost14Activity extends Activity {
 
     private RotateDrawable mRotateDrawable;
 
-    private static final Property<View, Integer> VIEW_LAYOUT_HEIGHT =
-            new Property<View, Integer>(Integer.class, "viewLayoutHeight") {
+    private static final com.nineoldandroids.util.Property<View, Integer> VIEW_LAYOUT_HEIGHT =
+            new  com.nineoldandroids.util.Property<View, Integer>(Integer.class, "viewLayoutHeight") {
 
                 @Override
                 public void set(View object, Integer value) {
@@ -66,20 +61,37 @@ public class RotateDrawablePost14Activity extends Activity {
             @Override
             public void onClick(View v) {
                 mTextView.setEnabled(false);
-                ObjectAnimator expandCollapseAnimator = ObjectAnimator.ofInt(mContent, VIEW_LAYOUT_HEIGHT, mContent.getHeight(), !mExpanded ? mContentHeight : 0);
+                com.nineoldandroids.animation.ObjectAnimator expandCollapseAnimator =   com.nineoldandroids.animation.ObjectAnimator.ofInt(mContent, VIEW_LAYOUT_HEIGHT, mContent.getHeight(), !mExpanded ? mContentHeight : 0);
                 expandCollapseAnimator.setInterpolator(mSmoothInterpolator);
-                expandCollapseAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-
-                    public void onAnimationUpdate(ValueAnimator animation) {
-                        int level = (int) (MID_MAX_LEVEL * animation.getAnimatedFraction()) + (mExpanded ? MID_MAX_LEVEL : 0);
+                expandCollapseAnimator.addUpdateListener(new com.nineoldandroids.animation.ValueAnimator.AnimatorUpdateListener() {
+                    @Override
+                    public void onAnimationUpdate(com.nineoldandroids.animation.ValueAnimator valueAnimator) {
+                        int level = (int) (MID_MAX_LEVEL * valueAnimator.getAnimatedFraction()) + (mExpanded ? MID_MAX_LEVEL : 0);
                         mRotateDrawable.setLevel(level);
                     }
                 });
-                expandCollapseAnimator.addListener(new AnimatorListenerAdapter() {
+
+                expandCollapseAnimator.addListener(new com.nineoldandroids.animation.Animator.AnimatorListener() {
+
                     @Override
-                    public void onAnimationEnd(Animator animation) {
+                    public void onAnimationStart(com.nineoldandroids.animation.Animator animator) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(com.nineoldandroids.animation.Animator animator) {
                         mExpanded = !mExpanded;
                         mTextView.setEnabled(true);
+                    }
+
+                    @Override
+                    public void onAnimationCancel(com.nineoldandroids.animation.Animator animator) {
+
+                    }
+
+                    @Override
+                    public void onAnimationRepeat(com.nineoldandroids.animation.Animator animator) {
+
                     }
                 });
                 expandCollapseAnimator.start();
